@@ -1,0 +1,12 @@
+
+
+
+module FA(A, B, C, S, CO);
+
+input A, B, C;
+output S, CO;
+
+assign S = A^B^C;
+assign CO = (A^B)&C | (A&B);
+
+endmodule
