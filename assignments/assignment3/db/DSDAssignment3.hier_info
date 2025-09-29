@@ -1,4 +1,47 @@
-|sp3
+|sp5
+m[0] => pp0.IN0
+m[0] => pp1.IN0
+m[0] => pp2.IN0
+m[0] => pp3.IN0
+m[1] => pp0.IN0
+m[1] => pp1.IN0
+m[1] => pp2.IN0
+m[1] => pp3.IN0
+m[2] => pp0.IN0
+m[2] => pp1.IN0
+m[2] => pp2.IN0
+m[2] => pp3.IN0
+m[3] => pp0.IN0
+m[3] => pp1.IN0
+m[3] => pp2.IN0
+m[3] => pp3.IN0
+q[0] => pp0.IN1
+q[0] => pp0.IN1
+q[0] => pp0.IN1
+q[0] => pp0.IN1
+q[1] => pp1.IN1
+q[1] => pp1.IN1
+q[1] => pp1.IN1
+q[1] => pp1.IN1
+q[2] => pp2.IN1
+q[2] => pp2.IN1
+q[2] => pp2.IN1
+q[2] => pp2.IN1
+q[3] => pp3.IN1
+q[3] => pp3.IN1
+q[3] => pp3.IN1
+q[3] => pp3.IN1
+p[0] <= pp0.DB_MAX_OUTPUT_PORT_TYPE
+p[1] <= adder4:A1.Sum
+p[2] <= s1[1].DB_MAX_OUTPUT_PORT_TYPE
+p[3] <= s1[2].DB_MAX_OUTPUT_PORT_TYPE
+p[4] <= s1[3].DB_MAX_OUTPUT_PORT_TYPE
+p[5] <= adder4:A2.Sum
+p[6] <= s2[1].DB_MAX_OUTPUT_PORT_TYPE
+p[7] <= adder4:A3.Cout
+
+
+|sp5|adder4:A1
 A[0] => Add0.IN4
 A[1] => Add0.IN3
 A[2] => Add0.IN2
@@ -7,11 +50,45 @@ B[0] => Add0.IN8
 B[1] => Add0.IN7
 B[2] => Add0.IN6
 B[3] => Add0.IN5
-cin => Add1.IN10
-cout <= corrected_sum.DB_MAX_OUTPUT_PORT_TYPE
-S[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
-S[1] <= corrected_sum.DB_MAX_OUTPUT_PORT_TYPE
-S[2] <= corrected_sum.DB_MAX_OUTPUT_PORT_TYPE
-S[3] <= corrected_sum.DB_MAX_OUTPUT_PORT_TYPE
+Cin => Add1.IN10
+Sum[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sp5|adder4:A2
+A[0] => Add0.IN4
+A[1] => Add0.IN3
+A[2] => Add0.IN2
+A[3] => Add0.IN1
+B[0] => Add0.IN8
+B[1] => Add0.IN7
+B[2] => Add0.IN6
+B[3] => Add0.IN5
+Cin => Add1.IN10
+Sum[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sp5|adder4:A3
+A[0] => Add0.IN4
+A[1] => Add0.IN3
+A[2] => Add0.IN2
+A[3] => Add0.IN1
+B[0] => Add0.IN8
+B[1] => Add0.IN7
+B[2] => Add0.IN6
+B[3] => Add0.IN5
+Cin => Add1.IN10
+Sum[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -1,0 +1,23 @@
+module sp4(
+    input  [3:0] A, B,   // BCD inputs
+    input        Cin,    // Carry in
+    output reg [3:0] S,  // BCD digit sum
+    output reg   Cout    // Carry out
+);
+    reg [4:0] binary_sum;
+
+    always @(*) begin
+        // Step 1: Add
+        binary_sum = A + B + Cin;
+
+        // Step 2: Correction
+        if (binary_sum > 9) begin
+            binary_sum = binary_sum + 6;
+        end
+
+        // Step 3: Assign outputs
+        S = binary_sum[3:0];
+        Cout = binary_sum[4];
+    end
+
+endmodule
