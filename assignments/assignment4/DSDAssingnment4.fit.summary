@@ -1,13 +1,13 @@
-Fitter Status : Successful - Mon Oct  6 13:08:41 2025
+Fitter Status : Successful - Mon Oct  6 15:36:40 2025
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : DSDAssingnment4
-Top-level Entity Name : lfsr
+Top-level Entity Name : sequence
 Family : Cyclone V
 Device : 5CGXFC7C7F23C8
 Timing Models : Final
-Logic utilization (in ALMs) : 4 / 56,480 ( < 1 % )
-Total registers : 5
-Total pins : 7 / 268 ( 3 % )
+Logic utilization (in ALMs) : 3 / 56,480 ( < 1 % )
+Total registers : 4
+Total pins : 6 / 268 ( 2 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 7,024,640 ( 0 % )
 Total RAM Blocks : 0 / 686 ( 0 % )

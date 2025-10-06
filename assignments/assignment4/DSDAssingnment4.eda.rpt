@@ -1,5 +1,5 @@
 EDA Netlist Writer report for DSDAssingnment4
-Mon Oct  6 13:11:23 2025
+Mon Oct  6 15:38:06 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -37,9 +37,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Oct  6 13:11:23 2025 ;
+; EDA Netlist Writer Status ; Successful - Mon Oct  6 15:38:06 2025 ;
 ; Revision Name             ; DSDAssingnment4                       ;
-; Top-level Entity Name     ; lfsr                                  ;
+; Top-level Entity Name     ; sequence                              ;
 ; Family                    ; Cyclone V                             ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -66,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+-----------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                           ;
-+----------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                      ;
-+----------------------------------------------------------------------------------------------------------------------+
-; C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim//DSDAssingnment4.vo ;
-+----------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                         ;
++--------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                    ;
++--------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim//DSDAssingnment4.vo ;
++--------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -95,14 +95,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Oct  6 13:11:22 2025
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/ DSDAssingnment4 -c DSDAssingnment4
+    Info: Processing started: Mon Oct  6 15:38:05 2025
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/ DSDAssingnment4 -c DSDAssingnment4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file DSDAssingnment4.vo in folder "C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file DSDAssingnment4.vo in folder "C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4764 megabytes
-    Info: Processing ended: Mon Oct  6 13:11:23 2025
+    Info: Peak virtual memory: 4727 megabytes
+    Info: Processing ended: Mon Oct  6 15:38:06 2025
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

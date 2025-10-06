@@ -1,18 +1,22 @@
-|lfsr
-initialValue[0] => Y.DATAB
-initialValue[1] => Y.DATAB
-initialValue[2] => Y.DATAB
-initialValue[3] => Y.DATAB
-Load => Y.OUTPUTSELECT
-Load => Y.OUTPUTSELECT
-Load => Y.OUTPUTSELECT
-Load => Y.OUTPUTSELECT
-Load => Z~reg0.ENA
-Clock => Z~reg0.CLK
-Clock => Y[0].CLK
-Clock => Y[1].CLK
-Clock => Y[2].CLK
-Clock => Y[3].CLK
-Z <= Z~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|sequence
+IN => Mux1.IN2
+IN => Mux1.IN3
+IN => Mux0.IN4
+IN => Mux0.IN5
+IN => Mux1.IN4
+IN => Mux1.IN5
+IN => Mux0.IN6
+IN => Mux1.IN6
+IN => Mux0.IN7
+IN => Mux1.IN7
+IN => Mux0.IN3
+OUT <= OUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => presentState[0]~reg0.CLK
+CLK => presentState[1]~reg0.CLK
+CLK => presentState[2]~reg0.CLK
+CLK => OUT~reg0.CLK
+presentState[0] <= presentState[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+presentState[1] <= presentState[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+presentState[2] <= presentState[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

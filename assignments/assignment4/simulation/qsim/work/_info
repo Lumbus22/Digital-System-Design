@@ -1,6 +1,7 @@
 m255
 K4
 z2
+!s11f MIXED_VERSIONS
 Z0 !s12c _opt1
 Z1 !s99 nomlopt
 R0
@@ -21,7 +22,6 @@ R2
 R1
 R2
 R1
-!s11f vlog 2023.3 2023.07, Jul 17 2023
 13
 !s112 1.1
 !i10d 8192
@@ -54,6 +54,7 @@ o-quiet -auto_acc_if_foreign -work work -L cyclonev_ver -L altera_ver -L altera_
 R7
 n@_opt1
 R8
+R3
 vlfsr
 2DSDAssingnment4.vo
 Z9 !s110 1759770683
@@ -62,20 +63,20 @@ Z9 !s110 1759770683
 IH^3ER]OSk`;^SDZL?8hc13
 R3
 w1759770683
-8DSDAssingnment4.vo
-FDSDAssingnment4.vo
+Z10 8DSDAssingnment4.vo
+Z11 FDSDAssingnment4.vo
 !i122 18
 L0 32 384
-Z10 VDg1SIo80bB@j0V0VzS_@n1
-Z11 OL;L;2023.3;77
+Z12 VDg1SIo80bB@j0V0VzS_@n1
+Z13 OL;L;2023.3;77
 r1
 !s85 0
 31
-Z12 !s108 1759770683.000000
-!s107 DSDAssingnment4.vo|
-!s90 -work|work|DSDAssingnment4.vo|
+Z14 !s108 1759770683.000000
+Z15 !s107 DSDAssingnment4.vo|
+Z16 !s90 -work|work|DSDAssingnment4.vo|
 !i113 0
-Z13 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z17 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R7
 vlfsr_vlg_vec_tst
 2Waveform8.vwf.vt
@@ -89,14 +90,60 @@ w1759770682
 FWaveform8.vwf.vt
 !i122 19
 L0 30 60
-R10
-R11
+R12
+R13
 r1
 !s85 0
 31
-R12
+R14
 !s107 Waveform8.vwf.vt|
 !s90 -work|work|Waveform8.vwf.vt|
 !i113 0
-R13
+R17
+R7
+vsequence
+Z18 !s110 1759779488
+!i10b 1
+!s100 83GSE9BH6IA1;kLR31hWH0
+Z19 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ICl4PRI]7>3^^TWj:KL_CG2
+R12
+Z20 dC:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim
+w1759779486
+R10
+R11
+!i122 26
+L0 32 340
+Z21 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z22 !s108 1759779488.000000
+R15
+R16
+!i113 1
+Z23 o-work work
+R7
+vsequence_vlg_vec_tst
+R18
+!i10b 1
+!s100 Shc2_E_N3cEzH`I_i<WSe0
+R19
+I5=KmQjD1Rd:XQKP_IJP;F3
+R12
+R20
+w1759779484
+8Waveform9.vwf.vt
+FWaveform9.vwf.vt
+!i122 27
+L0 30 39
+R21
+r1
+!s85 0
+31
+R22
+!s107 Waveform9.vwf.vt|
+!s90 -work|work|Waveform9.vwf.vt|
+!i113 1
+R23
 R7

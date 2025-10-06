@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon Oct  6 13:08:12 2025
+Analysis & Synthesis Status : Successful - Mon Oct  6 15:35:21 2025
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : DSDAssingnment4
-Top-level Entity Name : lfsr
+Top-level Entity Name : sequence
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 5
-Total pins : 7
+Total registers : 4
+Total pins : 6
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

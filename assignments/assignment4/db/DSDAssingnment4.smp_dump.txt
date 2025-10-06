@@ -1,0 +1,11 @@
+
+State Machine - |sequence|presentState
+Name presentState.H presentState.G presentState.F presentState.E presentState.D presentState.C presentState.B presentState.A 
+presentState.A 0 0 0 0 0 0 0 0 
+presentState.B 0 0 0 0 0 0 1 1 
+presentState.C 0 0 0 0 0 1 0 1 
+presentState.D 0 0 0 0 1 0 0 1 
+presentState.E 0 0 0 1 0 0 0 1 
+presentState.F 0 0 1 0 0 0 0 1 
+presentState.G 0 1 0 0 0 0 0 1 
+presentState.H 1 0 0 0 0 0 0 1 

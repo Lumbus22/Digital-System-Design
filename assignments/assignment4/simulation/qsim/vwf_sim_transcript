@@ -1,15 +1,13 @@
 Determining the location of the ModelSim executable...
 
-Using: c:/intelfpga/23.1std/questa_fse/win64/
+Using: C:/intelFPGA/20.1/modelsim_ase/win32aloem
 
 To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
 Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off DSDAssingnment4 -c DSDAssingnment4 --vector_source="C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/Waveform8.vwf" --testbench_file="C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/Waveform8.vwf.vt"
-
-TBBmalloc: skip allocation functions replacement in ucrtbase.dll: unknown prologue for function _msize
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off DSDAssingnment4 -c DSDAssingnment4 --vector_source="C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/Waveform9.vwf" --testbench_file="C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/Waveform9.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -28,8 +26,8 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Oct  6 13:11:21 2025
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off DSDAssingnment4 -c DSDAssingnment4 --vector_source=C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/Waveform8.vwf --testbench_file=C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/Waveform8.vwf.vt
+    Info: Processing started: Mon Oct  6 15:38:02 2025
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off DSDAssingnment4 -c DSDAssingnment4 --vector_source=C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/Waveform9.vwf --testbench_file=C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/Waveform9.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 Completed successfully. 
@@ -38,9 +36,7 @@ Completed successfully.
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/" DSDAssingnment4 -c DSDAssingnment4
-
-TBBmalloc: skip allocation functions replacement in ucrtbase.dll: unknown prologue for function _msize
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/" DSDAssingnment4 -c DSDAssingnment4
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -59,130 +55,99 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Oct  6 13:11:22 2025
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/ DSDAssingnment4 -c DSDAssingnment4
+    Info: Processing started: Mon Oct  6 15:38:05 2025
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/ DSDAssingnment4 -c DSDAssingnment4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file DSDAssingnment4.vo in folder "C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file DSDAssingnment4.vo in folder "C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4764 megabytes
-    Info: Processing ended: Mon Oct  6 13:11:23 2025
+    Info: Peak virtual memory: 4727 megabytes
+    Info: Processing ended: Mon Oct  6 15:38:06 2025
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
 
-C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/DSDAssingnment4.do generated.
+C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/DSDAssingnment4.do generated.
 
 Completed successfully. 
 
 **** Running the ModelSim simulation ****
 
-c:/intelfpga/23.1std/questa_fse/win64//vsim -c -do DSDAssingnment4.do
+C:/intelFPGA/20.1/modelsim_ase/win32aloem/vsim -c -do DSDAssingnment4.do
 
 Reading pref.tcl
 
 
-# 2023.3
+# 2020.1
 
 
 # do DSDAssingnment4.do
 
 # ** Warning: (vlib-34) Library already exists at "work".
-# Errors: 0, Warnings: 1
 
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:11:23 on Oct 06,2025
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
+# Start time: 15:38:08 on Oct 06,2025
 # vlog -work work DSDAssingnment4.vo 
 
-# -- Compiling module lfsr
+# -- Compiling module sequence
 
 # 
 
 # Top level modules:
+# 	sequence
 
-# 	lfsr
-
-# End time: 13:11:23 on Oct 06,2025, Elapsed time: 0:00:00
+# End time: 15:38:08 on Oct 06,2025, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 13:11:23 on Oct 06,2025
-# vlog -work work Waveform8.vwf.vt 
+# Start time: 15:38:08 on Oct 06,2025
+# vlog -work work Waveform9.vwf.vt 
 
-# -- Compiling module lfsr_vlg_vec_tst
+# -- Compiling module sequence_vlg_vec_tst
 
 # 
-
 # Top level modules:
+# 	sequence_vlg_vec_tst
 
-# 	lfsr_vlg_vec_tst
-
-# End time: 13:11:23 on Oct 06,2025, Elapsed time: 0:00:00
+# End time: 15:38:08 on Oct 06,2025, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
-# vsim -voptargs=""+acc"" -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.lfsr_vlg_vec_tst 
-# Start time: 13:11:23 on Oct 06,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# //  Questa Intel Starter FPGA Edition-64
-# //  Version 2023.3 win64 Jul 17 2023
-# //
-# //  Copyright 1991-2023 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  QuestaSim and its associated documentation contain trade
-# //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
-# //  5 U.S.C. Section 552. Furthermore, this information
-# //  is prohibited from disclosure under the Trade Secrets Act,
-# //  18 U.S.C. Section 1905.
-# //
+# vsim -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.sequence_vlg_vec_tst 
+# Start time: 15:38:09 on Oct 06,2025
+# Loading work.sequence_vlg_vec_tst
+# Loading work.sequence
+# Loading cyclonev_ver.cyclonev_io_obuf
+# Loading cyclonev_ver.cyclonev_io_ibuf
+# Loading cyclonev_ver.cyclonev_clkena
+# Loading cyclonev_ver.cyclonev_lcell_comb
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
 
-# Loading work.lfsr_vlg_vec_tst(fast)
-# Loading work.lfsr(fast)
-# Loading cyclonev_ver.cyclonev_io_obuf(fast)
-# Loading cyclonev_ver.cyclonev_io_ibuf(fast)
-# Loading cyclonev_ver.cyclonev_clkena(fast)
-# Loading cyclonev_ver.cyclonev_lcell_comb(fast)
-# Loading altera_ver.dffeas(fast)
-# Loading cyclonev_ver.cyclonev_lcell_comb(fast__1)
-# Loading cyclonev_ver.cyclonev_lcell_comb(fast__2)
-# Loading cyclonev_ver.cyclonev_lcell_comb(fast__3)
-# Loading cyclonev_ver.cyclonev_lcell_comb(fast__4)
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
+# after#25
 
-# after#26
+# ** Note: $finish    : Waveform9.vwf.vt(49)
+#    Time: 100 ns  Iteration: 0  Instance: /sequence_vlg_vec_tst
 
-# ** Note: $finish    : Waveform8.vwf.vt(49)
-#    Time: 100 ns  Iteration: 0  Instance: /lfsr_vlg_vec_tst
-
-# End time: 13:11:24 on Oct 06,2025, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
+# End time: 15:38:09 on Oct 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/Waveform8.vwf...
+Reading C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/Waveform9.vwf...
 
-Reading C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/DSDAssingnment4.msim.vcd...
+Reading C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/DSDAssingnment4.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/enslenc1/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/DSDAssingnment4_20251006131124.sim.vwf
+Writing the resulting VWF to C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment4/simulation/qsim/DSDAssingnment4_20251006153810.sim.vwf
 
 Finished VCD to VWF conversion.
 
