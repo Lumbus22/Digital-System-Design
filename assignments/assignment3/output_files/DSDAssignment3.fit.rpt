@@ -1,5 +1,5 @@
 Fitter report for DSDAssignment3
-Mon Sep 29 08:39:28 2025
+Mon Sep 29 08:44:28 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -64,7 +64,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Sep 29 08:39:28 2025          ;
+; Fitter Status                      ; Successful - Mon Sep 29 08:44:27 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; DSDAssignment3                                 ;
 ; Top-level Entity Name              ; sp5                                            ;
@@ -1308,7 +1308,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "x1" is assigned to location or region, but does not exist in design
     Warning (15706): Node "x2" is assigned to location or region, but does not exist in design
     Warning (15706): Node "x3" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1322,7 +1322,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.18 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.19 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1331,10 +1331,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/Laptop/Documents/GitHub/Digital-System-Design/assignments/assignment3/output_files/DSDAssignment3.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 6624 megabytes
-    Info: Processing ended: Mon Sep 29 08:39:29 2025
+    Info: Peak virtual memory: 6612 megabytes
+    Info: Processing ended: Mon Sep 29 08:44:28 2025
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +----------------------------+

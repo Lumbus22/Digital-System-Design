@@ -31,14 +31,14 @@ q[3] => pp3.IN1
 q[3] => pp3.IN1
 q[3] => pp3.IN1
 q[3] => pp3.IN1
-p[0] <= pp0.DB_MAX_OUTPUT_PORT_TYPE
-p[1] <= adder4:A1.Sum
-p[2] <= s1[1].DB_MAX_OUTPUT_PORT_TYPE
-p[3] <= s1[2].DB_MAX_OUTPUT_PORT_TYPE
-p[4] <= s1[3].DB_MAX_OUTPUT_PORT_TYPE
-p[5] <= adder4:A2.Sum
-p[6] <= s2[1].DB_MAX_OUTPUT_PORT_TYPE
-p[7] <= adder4:A3.Cout
+p[0] << pp0.DB_MAX_OUTPUT_PORT_TYPE
+p[1] << adder4:A1.Sum
+p[2] << s1[1].DB_MAX_OUTPUT_PORT_TYPE
+p[3] << s1[2].DB_MAX_OUTPUT_PORT_TYPE
+p[4] << s1[3].DB_MAX_OUTPUT_PORT_TYPE
+p[5] << adder4:A2.Sum
+p[6] << s2[1].DB_MAX_OUTPUT_PORT_TYPE
+p[7] << adder4:A3.Cout
 
 
 |sp5|adder4:A1

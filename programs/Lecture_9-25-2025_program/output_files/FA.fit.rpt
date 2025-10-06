@@ -1,5 +1,5 @@
 Fitter report for FA
-Thu Sep 25 11:52:42 2025
+Mon Sep 29 12:49:22 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Sep 25 11:52:42 2025          ;
+; Fitter Status                      ; Successful - Mon Sep 29 12:49:21 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; FA                                             ;
 ; Top-level Entity Name              ; FA                                             ;
@@ -149,12 +149,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.05        ;
+; Average used               ; 1.04        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.3%      ;
+;     Processors 2-16        ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -1168,17 +1168,17 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.11 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/Users/Laptop/Documents/GitHub/Digital-System-Design/programs/Lecture_9-25-2025_program/output_files/FA.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 6616 megabytes
-    Info: Processing ended: Thu Sep 25 11:52:43 2025
-    Info: Elapsed time: 00:00:10
+    Info: Peak virtual memory: 6588 megabytes
+    Info: Processing ended: Mon Sep 29 12:49:22 2025
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:16
 
 

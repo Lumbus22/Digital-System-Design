@@ -1,0 +1,11 @@
+module D_Flip_Flop(
+input x, clk;
+reg output A;
+
+);
+
+always @(posedge clk)
+	Q1 = x & (~Q1);
+	Q0 = Q1;
+	
+endmodule

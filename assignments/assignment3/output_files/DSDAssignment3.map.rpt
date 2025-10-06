@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DSDAssignment3
-Mon Sep 29 08:39:16 2025
+Mon Sep 29 08:44:15 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -46,7 +46,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 29 08:39:16 2025          ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 29 08:44:15 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; DSDAssignment3                                 ;
 ; Top-level Entity Name              ; sp5                                            ;
@@ -289,7 +289,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -299,7 +299,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Mon Sep 29 08:39:01 2025
+    Info: Processing started: Mon Sep 29 08:44:00 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DSDAssignment3 -c DSDAssignment3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -330,8 +330,8 @@ Info (21057): Implemented 46 device resources after synthesis - the final resour
     Info (21061): Implemented 30 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4776 megabytes
-    Info: Processing ended: Mon Sep 29 08:39:16 2025
+    Info: Processing ended: Mon Sep 29 08:44:15 2025
     Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:40
+    Info: Total CPU time (on all processors): 00:00:41
 
 

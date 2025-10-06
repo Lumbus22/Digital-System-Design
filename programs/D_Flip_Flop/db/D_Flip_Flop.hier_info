@@ -1,0 +1,37 @@
+|SLOW_CLK
+clk => k[0].CLK
+clk => k[1].CLK
+clk => k[2].CLK
+clk => k[3].CLK
+clk => k[4].CLK
+clk => k[5].CLK
+clk => k[6].CLK
+clk => k[7].CLK
+clk => k[8].CLK
+clk => k[9].CLK
+clk => k[10].CLK
+clk => k[11].CLK
+clk => k[12].CLK
+clk => k[13].CLK
+clk => k[14].CLK
+clk => k[15].CLK
+clk => k[16].CLK
+clk => k[17].CLK
+clk => k[18].CLK
+clk => k[19].CLK
+clk => k[20].CLK
+clk => k[21].CLK
+clk => k[22].CLK
+clk => k[23].CLK
+clk => k[24].CLK
+clk => k[25].CLK
+clk => k[26].CLK
+clk => k[27].CLK
+clk => k[28].CLK
+clk => k[29].CLK
+clk => k[30].CLK
+clk => k[31].CLK
+clk => clk_1hz~reg0.CLK
+clk_1hz <= clk_1hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
