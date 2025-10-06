@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FA
-Thu Sep 25 11:52:32 2025
+Mon Sep 29 12:49:13 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 25 11:52:32 2025          ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 29 12:49:13 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; FA                                             ;
 ; Top-level Entity Name              ; FA                                             ;
@@ -250,7 +250,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -260,12 +260,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Sep 25 11:52:17 2025
+    Info: Processing started: Mon Sep 29 12:49:04 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FA -c FA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file fa.v
-    Info (12023): Found entity 1: FA File: C:/Users/Laptop/Documents/GitHub/Digital-System-Design/programs/Lecture_9-25-2025_program/FA.v Line: 4
+    Info (12023): Found entity 1: FA File: C:/Users/Laptop/Documents/GitHub/Digital-System-Design/programs/Lecture_9-25-2025_program/FA.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/fa.v
+    Info (12023): Found entity 1: D_Filp_Flop File: C:/Users/Laptop/Documents/GitHub/Digital-System-Design/programs/Lecture_9-25-2025_program/output_files/FA.v Line: 1
 Info (12127): Elaborating entity "FA" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -275,9 +277,9 @@ Info (21057): Implemented 7 device resources after synthesis - the final resourc
     Info (21059): Implemented 2 output pins
     Info (21061): Implemented 2 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4773 megabytes
-    Info: Processing ended: Thu Sep 25 11:52:32 2025
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:40
+    Info: Peak virtual memory: 4772 megabytes
+    Info: Processing ended: Mon Sep 29 12:49:13 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:22
 
 
