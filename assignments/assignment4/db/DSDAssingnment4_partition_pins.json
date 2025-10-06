@@ -1,0 +1,37 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Z",
+					"strict" : false
+				},
+				{
+					"name" : "Load",
+					"strict" : false
+				},
+				{
+					"name" : "Clock",
+					"strict" : false
+				},
+				{
+					"name" : "initialValue[3]",
+					"strict" : false
+				},
+				{
+					"name" : "initialValue[2]",
+					"strict" : false
+				},
+				{
+					"name" : "initialValue[1]",
+					"strict" : false
+				},
+				{
+					"name" : "initialValue[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

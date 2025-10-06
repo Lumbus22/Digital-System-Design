@@ -1,0 +1,18 @@
+|lfsr
+initialValue[0] => Y.DATAB
+initialValue[1] => Y.DATAB
+initialValue[2] => Y.DATAB
+initialValue[3] => Y.DATAB
+Load => Y.OUTPUTSELECT
+Load => Y.OUTPUTSELECT
+Load => Y.OUTPUTSELECT
+Load => Y.OUTPUTSELECT
+Load => Z~reg0.ENA
+Clock => Z~reg0.CLK
+Clock => Y[0].CLK
+Clock => Y[1].CLK
+Clock => Y[2].CLK
+Clock => Y[3].CLK
+Z <= Z~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
