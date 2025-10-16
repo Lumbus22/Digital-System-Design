@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DSDAssingnment4
-Mon Oct  6 15:35:21 2025
+Mon Oct  6 16:43:52 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -45,7 +45,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Oct  6 15:35:21 2025          ;
+; Analysis & Synthesis Status     ; Successful - Mon Oct  6 16:43:52 2025          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; DSDAssingnment4                                ;
 ; Top-level Entity Name           ; sequence                                       ;
@@ -189,8 +189,8 @@ https://fpgasoftware.intel.com/eula.
 ;     -- 7 input functions                    ; 0                    ;
 ;     -- 6 input functions                    ; 0                    ;
 ;     -- 5 input functions                    ; 0                    ;
-;     -- 4 input functions                    ; 1                    ;
-;     -- <=3 input functions                  ; 3                    ;
+;     -- 4 input functions                    ; 4                    ;
+;     -- <=3 input functions                  ; 0                    ;
 ;                                             ;                      ;
 ; Dedicated logic registers                   ; 4                    ;
 ;                                             ;                      ;
@@ -198,10 +198,10 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                      ;
 ; Total DSP Blocks                            ; 0                    ;
 ;                                             ;                      ;
-; Maximum fan-out node                        ; presentState[2]~reg0 ;
+; Maximum fan-out node                        ; presentState[0]~reg0 ;
 ; Maximum fan-out                             ; 5                    ;
-; Total fan-out                               ; 30                   ;
-; Average fan-out                             ; 1.50                 ;
+; Total fan-out                               ; 34                   ;
+; Average fan-out                             ; 1.70                 ;
 +---------------------------------------------+----------------------+
 
 
@@ -256,9 +256,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     plain             ; 4                           ;
 ; arriav_lcell_comb     ; 4                           ;
 ;     normal            ; 4                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 1                           ;
+;         4 data inputs ; 4                           ;
 ; boundary_port         ; 6                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 1.00                        ;
@@ -281,7 +279,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Mon Oct  6 15:35:07 2025
+    Info: Processing started: Mon Oct  6 16:43:37 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DSDAssingnment4 -c DSDAssingnment4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -300,9 +298,9 @@ Info (21057): Implemented 10 device resources after synthesis - the final resour
     Info (21059): Implemented 4 output pins
     Info (21061): Implemented 4 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4864 megabytes
-    Info: Processing ended: Mon Oct  6 15:35:21 2025
-    Info: Elapsed time: 00:00:14
+    Info: Peak virtual memory: 4848 megabytes
+    Info: Processing ended: Mon Oct  6 16:43:52 2025
+    Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:41
 
 

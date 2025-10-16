@@ -1,15 +1,17 @@
 |sequence
-IN => Mux1.IN2
-IN => Mux1.IN3
-IN => Mux0.IN4
+IN => Mux0.IN7
 IN => Mux0.IN5
+IN => Mux0.IN6
 IN => Mux1.IN4
 IN => Mux1.IN5
-IN => Mux0.IN6
 IN => Mux1.IN6
-IN => Mux0.IN7
 IN => Mux1.IN7
-IN => Mux0.IN3
+IN => Mux2.IN6
+IN => Mux2.IN7
+IN => Mux3.IN4
+IN => Mux3.IN5
+IN => Mux3.IN6
+IN => Mux3.IN7
 OUT <= OUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CLK => presentState[0]~reg0.CLK
 CLK => presentState[1]~reg0.CLK

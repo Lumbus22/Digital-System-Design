@@ -6,7 +6,7 @@ output reg OUT;
 
 parameter reg [2:0]A = 3'b000, B = 3'b001, C = 3'b010, D = 3'b011, E = 3'b100, F = 3'b101, G = 3'b110, H = 3'b111;
 
-output reg [2:0]presentState = A;
+output reg [2:0]presentState = A; //Start in state A
  
 
 always @(posedge CLK)
@@ -17,79 +17,129 @@ always @(posedge CLK)
 		
 			A: begin
 					
-					OUT = 0;
 					if(IN)
-						presentState = B;
+						begin
+							presentState = B;
+							OUT = 0;
+						end
 					else
-						presentState = A;
+						begin
+							presentState = F;
+							OUT = 0;
+						end
 				end
+				
 				
 			B: begin
 					
-					OUT = 0;
 					if(IN)
-						presentState = D;
+						begin
+							presentState = C;
+							OUT = 0;
+						end
 					else
-						presentState = C;
+						begin
+							presentState = D;
+							OUT = 0;
+						end
 				end
+			
 			
 			C: begin
 					
-					OUT = 0;
 					if(IN)
-						presentState = A;
+						begin
+							presentState = E;
+							OUT = 0;
+						end
+						
 					else
-						presentState = E;
+						begin
+							presentState = F;
+							OUT = 0;
+						end
 				end
 				
 				
 				
 			D: begin
 					
-					OUT = 0;
 					if(IN)
-						presentState = G;
+						begin
+							presentState = A;
+							OUT = 0;
+						end
+						
 					else
-						presentState = C;
+						begin
+							presentState = G;
+							OUT = 1;
+						end
 				end
+				
 				
 			E: begin
 					
-					OUT = 0;
 					if(IN)
-						presentState = F;
+						begin
+							presentState = C;
+							OUT = 0;
+						end
 					else
-						presentState = A;
+						begin
+							presentState = D;	
+							OUT = 0;
+						end
+						
 				end
 				
 				
 			F: begin
-					
-					OUT = 1;
+							
 					if(IN)
-						presentState = D;
+						begin
+							presentState = B;
+							OUT = 1;
+						end
 					else
-						presentState = C;
+						begin
+							presentState = F;
+							OUT = 1;
+						end
 				end
+				
 				
 			G: begin
 					
-					OUT = 0;
+					
 					if(IN)
-						presentState = H;
+						begin
+							presentState = G;
+							OUT = 1;
+						end
 					else
-						presentState = C;
+						begin
+							presentState = H;
+							OUT = 0;
+						end
 				end
 				
-				
+			
 			H: begin
 					
 					OUT = 1;
 					if(IN)
-						presentState = H;
+						begin
+							presentState = A;
+							OUT = 0;
+						end
 					else
-						presentState = C;
+						begin
+							presentState = G;
+							OUT = 1;
+						end
 				end
+			
 			
 			default: begin
 							presentState = A;							
