@@ -1,16 +1,22 @@
 //Top-Level CPU
 
 module cpu(
-	input clk, reset
+	input clk,
+	input reset,
+	output [31:0] pc,
+	output [31:0] instr
 
 );
 
-	wire [31:0] pc, pc_next, pc_plus4;
-	wire [31:0] instr; 
+	wire [31:0] pc_next, pc_plus4; 
 	wire [31:0] rs1_data, rs2_data, alu_result, mem_read_data;
 	wire RegWrite, MemRead, MemWrite, MemToReg, ALUSrc, Branch;
 	wire [3:0] ALUOp;
 
+	//Assign PC so it is viewable internaly
+	
+	
+	
 	// Program Counter (PC)
 	
 	reg [31:0] PC;

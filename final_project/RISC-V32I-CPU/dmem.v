@@ -1,5 +1,5 @@
 //Data Memory
-//This part of the cpu storoes nad retrieves data during hte SW and LW instructions
+//This part of the cpu storoes and retrieves data during hte SW and LW instructions
 //Writes happen at clk edge, reads happen imidiately (combinational)
 module dmem(
 

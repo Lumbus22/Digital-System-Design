@@ -6,9 +6,15 @@ module cpu_tb();     // Testbench module has no ports — it's the top-level tes
 
     // Instantiate the CPU module under test (UUT = Unit Under Test)
     // Connect testbench signals 'clk' and 'reset' to the CPU's inputs
-    cpu CPU (
+	 
+	 wire [31:0] pc; //Allows us to see the contents of the PC
+	 wire [31:0] instr; // Allows us to view the instruction being exectuted
+	 
+    cpu uut ( 			//uut  "unit under test" | Creates a cpu named uut
         .clk(clk),
-        .reset(reset)
+        .reset(reset),
+		  .pc(pc),
+		  .instr(instr)
     );
 
     // --------------------------
@@ -27,10 +33,19 @@ module cpu_tb();     // Testbench module has no ports — it's the top-level tes
     // This block drives the reset and determines how long the simulation runs
     initial begin
         reset = 1;          // Assert reset high at time 0
-        #10 reset = 0;      // Deassert reset after 10 ns → CPU begins normal operation
+        #100; 					 // Hold reset for 100ns
+		  reset = 0;     	
 
-        // Let the simulation run for 200 ns (enough time for several instructions)
-        #200 $stop;         // Stop simulation and open waveform viewer
     end
 
+	 initial begin
+		// monitor signal in console
+		$monitor("Time=%0t | PC=%h | Instr=%h | Reset=%b", $time, pc, instr, reset);
+		
+		//Run simulation for a fixed time 
+		#10000; //1000ns
+		$finish;
+	end
+	 
+	 
 endmodule
