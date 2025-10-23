@@ -8,7 +8,7 @@ module imem(
 
 	
 	
-	//Creating an array of 32 bit instructions for the CPU to operate on.
+	//Creating a 64 item array of 32 bit instructions for the CPU to operate on.
 	reg [31:0] memory [0:63]; // 64 instructions max for now
 	
 	initial begin
@@ -28,6 +28,10 @@ module imem(
 	
 	
 	//Assigns instr = is the memory at the program counter (PC)
-	assign instr = memory[addr[7:2]]; // word-aligned
+	
+	assign instr = memory[addr[7:2]]; // word-aligned by selecting the 
+	
+	//The PC increments by 4. By selecting the 7th to the 2nd bit we divide the PC value by 4(Logical shift right by 3 bits.). This lets us select memory location 0-63!
+	// 
 endmodule
 	

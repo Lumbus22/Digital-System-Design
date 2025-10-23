@@ -13,7 +13,7 @@ output Zero
 );
 
 
-assign Zero = (Result == 0);
+assign Zero = (Result == 0); // 
 
 always @(*) 
 	begin
