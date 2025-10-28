@@ -33,7 +33,10 @@ module cpu(
 		end
 		
 		// Instruction Memory
-		imem IMEM (.addr(pc), .instr(instr)); //the cpu asks imem for the instruction using the current pc
+		imem IMEM (
+			.addr(pc), 			//the cpu asks imem for the instruction using the current pc
+			.instr(instr)
+		); 
 		
 		// Control Unit
 		
@@ -68,15 +71,27 @@ module cpu(
 		
 		//This line chooses the second ALU operand
 		wire [31:0] alu_in2 = ALUSrc ? {{20{instr[31]}}, instr[31:20]} : rs2_data; //if ALUSrc = 1, use the immediate value (sign-extend bits [31:20]). If ALUSrc = 0, use the second register operand (rs2_data).
-		
-		alu ALU (.A(rs1_data), .B(alu_in2), .ALUControl(ALUOp), .Result(alu_result), .Zero());
+																											//The second operand is either an imidiate or a reg value
+		alu ALU (
+			.A(rs1_data), 
+			.B(alu_in2), 
+			.ALUControl(ALUOp), 
+			.Result(alu_result), 
+			.Zero()
+		);
 		
 		
 		
 		//Data Memory
 		//Accessed when using lw and sw instrucitons
-		dmem DMEM (.clk(clk), .MemWrite(MemWrite), .MemRead(MemRead),
-						.addr(alu_result), .WriteData(rs2_data), .ReadData(mem_read_data));
+		dmem DMEM (
+			.clk(clk), 
+			.MemWrite(MemWrite), 
+			.MemRead(MemRead),
+			.addr(alu_result), 
+			.WriteData(rs2_data), 
+			.ReadData(mem_read_data)
+		);
 						
 	endmodule
 		

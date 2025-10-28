@@ -1,5 +1,5 @@
 //Data Memory
-//This part of the cpu storoes and retrieves data during hte SW and LW instructions
+//This part of the cpu stores and retrieves data during hte SW and LW instructions
 //Writes happen at clk edge, reads happen imidiately (combinational)
 module dmem(
 
@@ -13,7 +13,7 @@ output reg [31:0] ReadData // The data read from memory
 
 );
 
-	reg [31:0] memory [0:63]; // defines a memory array of 64, 32bit words. So 256 bytes of mem
+	reg [31:0] memory [0:63]; // defines a memory array of 64, 32bit words. So 256 bytes of mem. This memory is accesible by the cpu and seperate from the registers. 
 	
 	
 	//Write to memory at the posedge of clk, if MemWrite = 1
@@ -25,12 +25,13 @@ output reg [31:0] ReadData // The data read from memory
 		
 	//Read memory into ReadData if MemRead = 1. 
 	//This block works combinationaly. no need for the clock
+	
 	always @(*) 
 		begin
 			if (MemRead)
-				ReadData = memory[addr[7:2]];
+				ReadData <= memory[addr[7:2]];
 			else
-				ReadData = 0;
+				ReadData <= 0;
 		end
 		
 endmodule

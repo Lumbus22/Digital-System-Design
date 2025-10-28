@@ -9,6 +9,18 @@ module control(
 
 );
 
+/*
+Notes for Control. The controller generate the control sgnals RegWrite, MemRead, MemWrite, MemToReg, ALUSrc, Branch, ALUOp
+
+RegWrite: 1 will force the pc to write "WriteData" to the current register destination (rd). 0 Disables RegWrite. See "regfile"
+
+MemRead: 1 will force a "ReadData" to a value in memory. the memory address is given in the machine code
+
+MemWrite: 1 writes "WriteData" or (rs2) to a location in memory. the memory address is set in the machine code. see "dmem"
+
+MemToReg: 1 set "WriteData" to mem_read_data if 0 then "WriteData" is the alu_result. 
+
+*/
 
 	always @(*) 
 		begin

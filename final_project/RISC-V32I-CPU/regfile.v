@@ -17,11 +17,13 @@ module regfile(
 	assign ReadData1 = (rs1 != 0) ? regs[rs1] : 0; // IF rs1 != 0, then ReadData1 = regs[rs1]
 	assign ReadData2 = (rs2 != 0) ? regs[rs2] : 0; //Combinational logic will imidialtely change values making ReadData1 & ReadData2 imidiately available
 	
+	
 	//Write port
 	always @(posedge clk) 
 		begin
 			if(RegWrite && rd != 0)
 				regs[rd] <= WriteData;
+			regs[0] <= 0;
 		end
 				
 endmodule

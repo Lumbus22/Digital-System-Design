@@ -14,7 +14,7 @@ module imem(
 	initial begin
 	
 	//Example Program
-	memory[0] = 32'h00500093; // addi x1, x0, 5
+	memory[0] = 32'h00500093; // addi x1, x0, 5 
 	memory[1] = 32'h00a00113; // addi x2, x0, 10
 	memory[2] = 32'h002081b3; // add x3, x1, x2
 	memory[3] = 32'h00302023; // sw x3, 0(x0)
