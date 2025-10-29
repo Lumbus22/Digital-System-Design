@@ -1,0 +1,346 @@
+/* RISC-V CPU Web IDE Styles */
+
+:root {
+    --bg-dark: #1e1e1e;
+    --bg-light: #252526;
+    --bg-panel: #2d2d30;
+    --text-primary: #d4d4d4;
+    --text-secondary: #858585;
+    --border-color: #3e3e42;
+    --accent-color: #007acc;
+    --success-color: #4ec9b0;
+    --warning-color: #f9a825;
+    --danger-color: #f44336;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.navbar {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-content {
+    height: calc(100vh - 56px);
+}
+
+/* Panel Styles */
+.panel-left, .panel-right {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-light);
+    border-right: 1px solid var(--border-color);
+}
+
+.panel-right {
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-header h5 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+/* Code Editor */
+.editor-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.code-editor {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    border: none;
+    outline: none;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: none;
+    tab-size: 4;
+}
+
+.code-editor::-webkit-scrollbar {
+    width: 12px;
+}
+
+.code-editor::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+.code-editor::-webkit-scrollbar-thumb {
+    background: var(--bg-panel);
+    border-radius: 6px;
+}
+
+.code-editor::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Console */
+.console-panel {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--border-color);
+}
+
+.console-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.console-header h6 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.console-output {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    overflow-y: auto;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.console-line {
+    margin-bottom: 0.2rem;
+}
+
+.console-line.error {
+    color: var(--danger-color);
+}
+
+.console-line.success {
+    color: var(--success-color);
+}
+
+.console-line.info {
+    color: var(--accent-color);
+}
+
+/* Control Panel */
+.control-panel {
+    padding: 1rem;
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.control-panel h5 {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+/* Tabs */
+.nav-tabs {
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 1rem;
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-secondary);
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--text-primary);
+    border-bottom-color: var(--accent-color);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--accent-color);
+    background-color: transparent;
+    border-bottom-color: var(--accent-color);
+}
+
+.tab-content {
+    flex: 1;
+    overflow: hidden;
+}
+
+.tab-pane {
+    height: 100%;
+}
+
+/* State Panel */
+.state-panel {
+    height: 100%;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+/* Registers Display */
+.register-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.register-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.85rem;
+}
+
+.register-item.changed {
+    border-color: var(--warning-color);
+    background-color: rgba(249, 168, 37, 0.1);
+}
+
+.register-name {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.register-value {
+    color: var(--text-primary);
+}
+
+/* Memory Display */
+.memory-display {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.85rem;
+}
+
+.memory-row {
+    display: flex;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.memory-addr {
+    width: 80px;
+    color: var(--text-secondary);
+}
+
+.memory-value {
+    flex: 1;
+    color: var(--text-primary);
+}
+
+.memory-value.highlight {
+    color: var(--warning-color);
+    font-weight: bold;
+}
+
+/* Instruction Display */
+.instruction-list {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.85rem;
+}
+
+.instruction-item {
+    display: flex;
+    padding: 0.4rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.instruction-item.current {
+    background-color: rgba(0, 122, 204, 0.2);
+    border-left: 3px solid var(--accent-color);
+}
+
+.instruction-addr {
+    width: 60px;
+    color: var(--text-secondary);
+}
+
+.instruction-hex {
+    width: 100px;
+    color: var(--success-color);
+}
+
+.instruction-asm {
+    flex: 1;
+    color: var(--text-primary);
+}
+
+/* Buttons */
+.btn {
+    font-size: 0.875rem;
+}
+
+.btn i {
+    margin-right: 0.25rem;
+}
+
+/* Status Badges */
+.badge {
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-panel);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .panel-left, .panel-right {
+        height: 50vh;
+    }
+    
+    .register-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

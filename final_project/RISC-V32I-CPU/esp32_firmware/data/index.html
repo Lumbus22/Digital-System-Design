@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RISC-V CPU Web IDE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <!-- Header -->
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">
+                    <i class="fas fa-microchip"></i> RISC-V32I CPU Web IDE
+                </span>
+                <div class="d-flex align-items-center">
+                    <span class="badge bg-success me-2" id="connectionStatus">
+                        <i class="fas fa-circle"></i> Connected
+                    </span>
+                    <span class="text-light me-2" id="cpuStatus">CPU: Stopped</span>
+                    <span class="text-light" id="pcDisplay">PC: 0x00</span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row g-0 main-content">
+            <!-- Left Panel: Code Editor -->
+            <div class="col-md-6 panel-left">
+                <div class="panel-header">
+                    <h5><i class="fas fa-code"></i> Assembly Editor</h5>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-primary" id="btnCompile">
+                            <i class="fas fa-cog"></i> Assemble
+                        </button>
+                        <button class="btn btn-success" id="btnUpload">
+                            <i class="fas fa-upload"></i> Upload
+                        </button>
+                        <button class="btn btn-info" id="btnLoadExample">
+                            <i class="fas fa-file-code"></i> Load Example
+                        </button>
+                    </div>
+                </div>
+                <div class="editor-container">
+                    <textarea id="codeEditor" class="code-editor"># RISC-V Assembly Program
+# Write your code here
+
+# Example: Add two numbers
+addi x1, x0, 10    # x1 = 10
+addi x2, x0, 20    # x2 = 20
+add x3, x1, x2     # x3 = x1 + x2 = 30
+
+# Infinite loop
+jal x0, 0          # Loop forever
+</textarea>
+                </div>
+                
+                <!-- Console -->
+                <div class="console-panel">
+                    <div class="console-header">
+                        <h6><i class="fas fa-terminal"></i> Console</h6>
+                        <button class="btn btn-sm btn-secondary" id="btnClearConsole">Clear</button>
+                    </div>
+                    <div id="console" class="console-output"></div>
+                </div>
+            </div>
+
+            <!-- Right Panel: CPU State -->
+            <div class="col-md-6 panel-right">
+                <!-- Control Panel -->
+                <div class="control-panel">
+                    <h5><i class="fas fa-gamepad"></i> CPU Control</h5>
+                    <div class="btn-toolbar" role="toolbar">
+                        <div class="btn-group me-2">
+                            <button class="btn btn-success" id="btnRun">
+                                <i class="fas fa-play"></i> Run
+                            </button>
+                            <button class="btn btn-warning" id="btnStop">
+                                <i class="fas fa-stop"></i> Stop
+                            </button>
+                            <button class="btn btn-danger" id="btnReset">
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-info" id="btnStep">
+                                <i class="fas fa-step-forward"></i> Step
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <small class="text-muted">
+                            Current Instruction: <span id="currentInstr" class="badge bg-secondary">0x00000000</span>
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Tabs for Registers and Memory -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#registersTab">
+                            <i class="fas fa-database"></i> Registers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#memoryTab">
+                            <i class="fas fa-memory"></i> Memory
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#instructionsTab">
+                            <i class="fas fa-list"></i> Instructions
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- Registers Tab -->
+                    <div id="registersTab" class="tab-pane fade show active">
+                        <div class="state-panel">
+                            <div class="register-grid" id="registerDisplay">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Memory Tab -->
+                    <div id="memoryTab" class="tab-pane fade">
+                        <div class="state-panel">
+                            <div class="memory-controls mb-2">
+                                <button class="btn btn-sm btn-primary" id="btnRefreshMemory">
+                                    <i class="fas fa-sync"></i> Refresh
+                                </button>
+                            </div>
+                            <div class="memory-display" id="memoryDisplay">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instructions Tab -->
+                    <div id="instructionsTab" class="tab-pane fade">
+                        <div class="state-panel">
+                            <div class="instruction-list" id="instructionDisplay">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Application Scripts -->
+    <script src="js/assembler.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

@@ -39,11 +39,32 @@ module cpu_tb();     // Testbench module has no ports — it's the top-level tes
     end
 
 	 initial begin
-		// monitor signal in console
-		$monitor("Time=%0t | PC=%h | Instr=%h | Reset=%b", $time, pc, instr, reset);
+		// Display header
+		$display("=========================================================================");
+		$display("                    RISC-V CPU Testbench - Fibonacci Demo");
+		$display("=========================================================================");
+		$display("Program: Calculate Fibonacci sequence and test CPU instructions");
+		$display("Expected: Fibonacci numbers stored in memory (0,1,1,2,3,5,8,13,...)");
+		$display("=========================================================================");
+		$display("");
 		
-		//Run simulation for a fixed time 
-		#10000; //1000ns
+		// Monitor signals in console with enhanced formatting
+		$monitor("Time=%0t ns | PC=%3d (0x%3h) | Instr=0x%h | Reset=%b", 
+		         $time, pc/4, pc, instr, reset);
+		
+		//Run simulation long enough to complete the program
+		#3000; // Run for 3000ns (300 clock cycles)
+		
+		$display("");
+		$display("=========================================================================");
+		$display("                         Simulation Complete");
+		$display("=========================================================================");
+		$display("Check the following in the waveform viewer:");
+		$display("  - Register x1, x2, x3 should show Fibonacci progression");
+		$display("  - Data memory locations 0-7 should contain: 0,1,1,2,3,5,8,13");
+		$display("  - Register x30 should be 0xFF (test complete marker)");
+		$display("  - PC should be stuck at 208 (0xD0) in infinite loop");
+		$display("=========================================================================");
 		$finish;
 	end
 	 
