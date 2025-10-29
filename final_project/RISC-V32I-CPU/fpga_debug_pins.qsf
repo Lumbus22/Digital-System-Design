@@ -1,0 +1,38 @@
+# Pin Assignments for RISC-V CPU with Debug Interface
+# Add these to your cpu.qsf file or import this file in Quartus
+
+# Clock - Changed to 3.3V LVTTL to match I/O bank
+set_location_assignment PIN_P11 -to clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
+
+# Reset Button
+set_location_assignment PIN_B8 -to reset_btn
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to reset_btn
+
+# UART Interface to ESP32
+set_location_assignment PIN_AB5 -to uart_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to uart_rx
+
+set_location_assignment PIN_AB6 -to uart_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to uart_tx
+
+# Status LEDs (optional - for visual feedback)
+set_location_assignment PIN_A8 -to status_leds[0]
+set_location_assignment PIN_A9 -to status_leds[1]
+set_location_assignment PIN_A10 -to status_leds[2]
+set_location_assignment PIN_B10 -to status_leds[3]
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to status_leds[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to status_leds[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to status_leds[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to status_leds[3]
+
+# Optional: Program Counter outputs (for debugging with logic analyzer)
+# Uncomment if you want to observe PC on GPIO pins
+# set_location_assignment PIN_V10 -to pc_out[0]
+# set_location_assignment PIN_W10 -to pc_out[1]
+# ... add more as needed
+
+# Top-level entity
+set_global_assignment -name TOP_LEVEL_ENTITY cpu_with_debug
+

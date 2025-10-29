@@ -2,7 +2,7 @@
 
 #include "web_server.h"
 #include <FS.h>
-#include <LittleFS.h>
+#include <SPIFFS.h>
 
 IDEWebServer::IDEWebServer(FPGAInterface *fpga) {
     fpgaInterface = fpga;
@@ -32,10 +32,8 @@ bool IDEWebServer::begin() {
 }
 
 void IDEWebServer::setupRoutes() {
-    // Serve static files from SPIFFS/LittleFS
-    server->serveStatic("/", LittleFS, "/").setDefaultFile("index.html");
-    
-    // ===== CPU Control API =====
+    // ===== CPU Control API ===== (Define API routes BEFORE static files!)
+    // API routes must be registered before serveStatic to take priority
     server->on("/api/cpu/start", HTTP_POST, [this](AsyncWebServerRequest *request) {
         this->handleCPUStart(request);
     });
@@ -85,13 +83,16 @@ void IDEWebServer::setupRoutes() {
     // ===== Program Upload API =====
     server->on("/api/program/upload", HTTP_POST,
         [](AsyncWebServerRequest *request) {
-            request->send(200);
+            // Don't send response here - handleProgramUpload will send it after processing body
         },
         NULL,
         [this](AsyncWebServerRequest *request, uint8_t *data, size_t len, size_t index, size_t total) {
             this->handleProgramUpload(request, data, len, index, total);
         }
     );
+    
+    // Serve static files LAST (so API routes take priority)
+    server->serveStatic("/", SPIFFS, "/").setDefaultFile("index.html");
     
     // 404 Handler
     server->onNotFound([](AsyncWebServerRequest *request) {

@@ -25,9 +25,11 @@ module cpu_with_debug(
     wire system_reset;
     
     // Synchronize external reset
+    // NOTE: DE10-Lite KEY buttons are active-LOW (pressed=0, released=1)
+    // So we invert the signal to get active-HIGH reset
     reg reset_sync1, reset_sync2;
     always @(posedge clk) begin
-        reset_sync1 <= reset_btn;
+        reset_sync1 <= ~reset_btn;  // Invert: button not pressed = 0 (no reset)
         reset_sync2 <= reset_sync1;
     end
     assign system_reset = reset_sync2;

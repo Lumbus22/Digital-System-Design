@@ -26,7 +26,11 @@ bool FPGAInterface::cpuStart() {
         return false;
     }
     uint32_t dummy;
-    return receiveResponse(dummy);
+    bool result = receiveResponse(dummy);
+    if (result) {
+        Serial.println("[FPGA] CPU started");
+    }
+    return result;
 }
 
 bool FPGAInterface::cpuStop() {
@@ -35,7 +39,11 @@ bool FPGAInterface::cpuStop() {
         return false;
     }
     uint32_t dummy;
-    return receiveResponse(dummy);
+    bool result = receiveResponse(dummy);
+    if (result) {
+        Serial.println("[FPGA] CPU stopped");
+    }
+    return result;
 }
 
 bool FPGAInterface::cpuReset() {
@@ -44,7 +52,11 @@ bool FPGAInterface::cpuReset() {
         return false;
     }
     uint32_t dummy;
-    return receiveResponse(dummy);
+    bool result = receiveResponse(dummy);
+    if (result) {
+        Serial.println("[FPGA] CPU reset");
+    }
+    return result;
 }
 
 bool FPGAInterface::cpuStep() {
@@ -269,12 +281,15 @@ bool FPGAInterface::waitForResponse(uint8_t expected, uint32_t timeout_ms) {
             }
             else if (response == RESP_ERROR) {
                 lastError = "FPGA returned error response";
+                Serial.println("[FPGA] ✗ Error response from FPGA");
                 return false;
             }
+            Serial.printf("[FPGA] ⚠ Unexpected response: 0x%02X (expected 0x%02X)\n", response, expected);
         }
         delay(1);
     }
     lastError = "Timeout waiting for response";
+    Serial.println("[FPGA] ✗ TIMEOUT - No response");
     return false;
 }
 

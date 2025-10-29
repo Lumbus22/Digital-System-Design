@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <WiFi.h>
 #include <FS.h>
-#include <LittleFS.h>
+#include <SPIFFS.h>
 #include "config.h"
 #include "fpga_interface.h"
 #include "web_server.h"
@@ -120,14 +120,14 @@ void setupWiFi() {
 void setupFileSystem() {
     Serial.println("[FS] Initializing file system...");
     
-    if (!LittleFS.begin(true)) {
+    if (!SPIFFS.begin(true)) {
         Serial.println("[ERROR] Failed to mount file system");
         Serial.println("[INFO] Web interface files may not be available");
     } else {
         Serial.println("[FS] File system mounted successfully");
         
         // List files
-        File root = LittleFS.open("/");
+        File root = SPIFFS.open("/");
         File file = root.openNextFile();
         Serial.println("[FS] Files in filesystem:");
         while (file) {
