@@ -17,9 +17,30 @@ module imem(
 	memory[0] = 32'h00500093; // addi x1, x0, 5 
 	memory[1] = 32'h00a00113; // addi x2, x0, 10
 	memory[2] = 32'h002081b3; // add x3, x1, x2
-	memory[3] = 32'h00302023; // sw x3, 0(x0)
-	memory[4] = 32'h00002103; // lw x4, 0(x0)
-	memory[5] = 32'h0041a233; // sub x5, x4, x1
+	memory[3] = 32'hDEA00213; // addi x4, x0, DEA
+	memory[4] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[5] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[6] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[7] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[8] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[9] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[10] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[11] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[12] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[13] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[14] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[15] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[16] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[17] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[18] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[19] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[20] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[21] = 32'hDEA00213; // addi x4, x0, DEA
+	//memory[22] = 32'hDEA00213; // addi x4, x0, DEA
+	
+	//memory[3] = 32'h00302023; // sw x3, 0(x0)
+	//memory[4] = 32'h00002103; // lw x4, 0(x0)
+	//memory[5] = 32'h0041a233; // sub x5, x4, x1
 	
 	// more instructions can be added as needed
 	

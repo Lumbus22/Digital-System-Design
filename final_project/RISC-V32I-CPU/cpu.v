@@ -4,14 +4,29 @@ module cpu(
 	input clk,
 	input reset,
 	output [31:0] pc,
-	output [31:0] instr
+	output [31:0] instr,
 
+	
+	
+	output [7:0] LEDOut,
+	output [41:0]sevenSegementDisplayValues,
+	
+	input updateDisplay,
+	input [4:0] selectRegisterBits
 );
 
 	wire [31:0] pc_next, pc_plus4; 
 	wire [31:0] rs1_data, rs2_data, alu_result, mem_read_data;
 	wire RegWrite, MemRead, MemWrite, MemToReg, ALUSrc, Branch;
 	wire [3:0] ALUOp;
+	
+	
+	
+	//Add the new allows us to read selected veiwRegister from the Register File (RF). See RF module for definition
+	wire [31:0] viewRegister; 
+	wire [5:0] selectedRegister;
+	
+	assign selectedRegister [4:0] = selectRegisterBits [4:0];
 
 	//Assign PC so it is viewable internaly
 	
@@ -23,13 +38,13 @@ module cpu(
 	assign pc = PC;
 	assign pc_plus4 = PC + 4;
 	
-	always @(posedge clk or posedge reset)
+	always @(posedge clk or posedge ~reset)
 		begin
-			if(reset)
+			if(~reset)
 				PC <= 0;
 			
 			else
-				PC <= pc_plus4; //simple sequenctial PC
+				PC <= pc_plus4; //simple sequenctial PC, will need to be updated a J and B instructions
 		end
 		
 		// Instruction Memory
@@ -62,8 +77,14 @@ module cpu(
 			.rd(instr[11:7]),
 			.WriteData(MemToReg ? mem_read_data : alu_result), //If the instruction is a (lw): write back the data from mem. else instruciton is (add, addi, and, ect...): write back the ALU result
 			.ReadData1(rs1_data),
-			.ReadData2(rs2_data)
+			.ReadData2(rs2_data),
+			.viewRegister(viewRegister),
+			.selectRegister(selectedRegister)
 		);
+		
+		//Register 1 represented as LEDs and Seven Segment. Last 8 LEDS and all Seven segemnt displays give allow for the user to represent 32 bits as
+		//binary and hex
+		
 		
 		
 		
@@ -92,6 +113,68 @@ module cpu(
 			.WriteData(rs2_data), 
 			.ReadData(mem_read_data)
 		);
+						
+						
+						
+						
+
+		//Now assigning DisplayLogic for viewing Register 1 on the LED's and 7 Segment Display
+		
+
+				
+			//Assigning each 7 segemnt display to display the proper hex number given the register value			
+						 
+
+					
+					
+					
+			//Assings 4 bit binary to the corresponding display bits for the 7 segment display.
+			function [0:6] segment;
+				input [3:0] fourBitChunk;
+					
+					begin
+						case(fourBitChunk [3:0])
+						
+							default	:	segment = ~7'b0000000; //Negating because the 7-segment LEDS are active low
+							
+							4'b0000	:	segment = ~7'b0111111;
+							4'b0001	:	segment = ~7'b0110000;
+							4'b0010	:	segment = ~7'b1011001;
+							4'b0011	:	segment = ~7'b1001111;
+							4'b0100	:	segment = ~7'b1100110;
+							4'b0101	:	segment = ~7'b1101101;
+							4'b0110	:	segment = ~7'b1111101;
+							4'b0111	:	segment = ~7'b0000111;
+							4'b1000	:	segment = ~7'b1111111;
+							4'b1001	:	segment = ~7'b1100111;
+							4'b1010	:	segment = ~7'b1110111;
+							4'b1011	:	segment = ~7'b0111100;
+							4'b1100	:	segment = ~7'b0111000;
+							4'b1101	:	segment = ~7'b1011110;
+							4'b1110	:	segment = ~7'b1111001;
+							4'b1111	:	segment = ~7'b1110001;
+						
+							
+						endcase
+					end
+				endfunction
+					
+				//always @ (~updateDisplay)
+					//begin
+					
+							//LED Assigned to register Values
+							assign LEDOut [7:0] = viewRegister [7:0];	
+					
+							//Assigning Segment Values
+							assign sevenSegementDisplayValues [6:0] 		= segment(viewRegister[11:8]);
+							assign sevenSegementDisplayValues [13:7] 		= segment(viewRegister[15:12]);
+							assign sevenSegementDisplayValues [20:14] 	= segment(viewRegister[19:16]);
+							assign sevenSegementDisplayValues [27:21] 	= segment(viewRegister[23:20]);
+							assign sevenSegementDisplayValues [34:28] 	= segment(viewRegister[27:24]);
+							assign sevenSegementDisplayValues [41:35] 	= segment(viewRegister[31:28]);
+							
+							
+					//end
 						
 	endmodule
 		

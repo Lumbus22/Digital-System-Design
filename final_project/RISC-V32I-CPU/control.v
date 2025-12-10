@@ -10,7 +10,7 @@ module control(
 );
 
 /*
-Notes for Control. The controller generate the control sgnals RegWrite, MemRead, MemWrite, MemToReg, ALUSrc, Branch, ALUOp
+Notes for Control. The controller generates the control signals RegWrite, MemRead, MemWrite, MemToReg, ALUSrc, Branch, ALUOp
 
 RegWrite: 1 will force the pc to write "WriteData" to the current register destination (rd). 0 Disables RegWrite. See "regfile"
 
