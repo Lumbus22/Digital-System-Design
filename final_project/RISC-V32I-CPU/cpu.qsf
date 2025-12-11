@@ -126,4 +126,13 @@ set_location_assignment PIN_B14 -to selectRegisterBits[3]
 set_location_assignment PIN_A14 -to selectRegisterBits[2]
 set_location_assignment PIN_A13 -to selectRegisterBits[1]
 set_location_assignment PIN_B12 -to selectRegisterBits[0]
+set_global_assignment -name VERILOG_FILE Extend.v
+set_location_assignment PIN_A8 -to DeadBits[0]
+set_location_assignment PIN_A9 -to DeadBits[1]
+set_location_assignment PIN_D15 -to DeadBits[2]
+set_location_assignment PIN_A16 -to DeadBits[3]
+set_location_assignment PIN_A19 -to DeadBits[4]
+set_location_assignment PIN_D22 -to DeadBits[5]
+set_location_assignment PIN_F17 -to DeadBits[6]
+set_location_assignment PIN_L19 -to DeadBits[7]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

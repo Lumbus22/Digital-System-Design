@@ -8,7 +8,8 @@ module regfile(
 	input [4:0] rs1, rs2, rd,
 	input [31:0] WriteData,
 	output [31:0] ReadData1, ReadData2, viewRegister,
-	input [4:0] selectRegister //5 bit Selection for one of hte 32 bit registers. 
+	input [4:0] selectRegister, //5 bit Selection for one of the 32 bit registers. 
+	input displayRegister
 	
 );
 
@@ -17,6 +18,7 @@ module regfile(
 	//Read Ports
 	assign ReadData1 = (rs1 != 0) ? regs[rs1] : 0; // IF rs1 != 0, then ReadData1 = regs[rs1]
 	assign ReadData2 = (rs2 != 0) ? regs[rs2] : 0; //Combinational logic will imidialtely change values making ReadData1 & ReadData2 imidiately available
+	
 	assign viewRegister = regs[selectRegister];
 	
 	//Write port

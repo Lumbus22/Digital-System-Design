@@ -12,15 +12,18 @@ module cpu(
 	output [41:0]sevenSegementDisplayValues,
 	
 	input updateDisplay,
-	input [4:0] selectRegisterBits
+	input [4:0] selectRegisterBits,
+	
+	output [7:0] DeadBits
 );
 
 	wire [31:0] pc_next, pc_plus4; 
-	wire [31:0] rs1_data, rs2_data, alu_result, mem_read_data;
-	wire RegWrite, MemRead, MemWrite, MemToReg, ALUSrc, Branch;
+	wire [31:0] rs1_data, rs2_data, alu_result, mem_read_data, Immidiate;
+	wire RegWrite, MemRead, MemWrite, MemToReg, ALUSrc, ALUSrc2, Branch;
 	wire [3:0] ALUOp;
-	
-	
+	wire [2:0] ImmSrc;
+
+	assign DeadBits [7:0] = 8'b11111100;
 	
 	//Add the new allows us to read selected veiwRegister from the Register File (RF). See RF module for definition
 	wire [31:0] viewRegister; 
@@ -38,7 +41,7 @@ module cpu(
 	assign pc = PC;
 	assign pc_plus4 = PC + 4;
 	
-	always @(posedge clk or posedge ~reset)
+	always @(posedge clk or negedge reset)
 		begin
 			if(~reset)
 				PC <= 0;
@@ -63,8 +66,12 @@ module cpu(
 			.MemWrite(MemWrite),
 			.MemToReg(MemToReg),
 			.ALUSrc(ALUSrc),
+			.ALUSrc2(ALUSrc2),
 			.Branch(Branch),
-			.ALUOp(ALUOp)
+			.ALUOp(ALUOp[3:0]),
+			.ImmSrc(ImmSrc[2:0]),
+			.funct3(instr[14:12]),
+			.funct7(instr[31:25])
 		);
 		
 		//The Register file holds the 32 RISC-V registers (0x-x31)
@@ -79,24 +86,32 @@ module cpu(
 			.ReadData1(rs1_data),
 			.ReadData2(rs2_data),
 			.viewRegister(viewRegister),
-			.selectRegister(selectedRegister)
+			.selectRegister(selectedRegister),
+			.displayRegister(updateDisplay)
 		);
 		
 		//Register 1 represented as LEDs and Seven Segment. Last 8 LEDS and all Seven segemnt displays give allow for the user to represent 32 bits as
 		//binary and hex
 		
-		
+		Extend EXTEND (
+			
+			.instruction(instr[31:7]),
+			.ImmSrc(ImmSrc[2:0]),
+			.ImmExt(Immidiate[31:0])
+			
+		); 
 		
 		
 		//ALU
 		
-		//This line chooses the second ALU operand
-		wire [31:0] alu_in2 = ALUSrc ? {{20{instr[31]}}, instr[31:20]} : rs2_data; //if ALUSrc = 1, use the immediate value (sign-extend bits [31:20]). If ALUSrc = 0, use the second register operand (rs2_data).
-																											//The second operand is either an imidiate or a reg value
+		wire [31:0] alu_in1 = ALUSrc2 ? 32'b0 : rs1_data;				//If ALUSrc2 = 1 then alu_in1 = 0, else if ALUSrc2 = 0 use the rs1 data
+		wire [31:0] alu_in2 = ALUSrc ? Immidiate[31:0] : rs2_data; //if ALUSrc = 1, use the immediate value (sign-extend bits [31:20]). If ALUSrc = 0, use the second register operand (rs2_data). 																								//The second operand is either an imidiate or a reg value
+
+		
 		alu ALU (
-			.A(rs1_data), 
+			.A(alu_in1), 
 			.B(alu_in2), 
-			.ALUControl(ALUOp), 
+			.ALUControl(ALUOp[3:0]), 
 			.Result(alu_result), 
 			.Zero()
 		);
@@ -112,6 +127,7 @@ module cpu(
 			.addr(alu_result), 
 			.WriteData(rs2_data), 
 			.ReadData(mem_read_data)
+		
 		);
 						
 						
@@ -137,22 +153,22 @@ module cpu(
 						
 							default	:	segment = ~7'b0000000; //Negating because the 7-segment LEDS are active low
 							
-							4'b0000	:	segment = ~7'b0111111;
-							4'b0001	:	segment = ~7'b0110000;
-							4'b0010	:	segment = ~7'b1011001;
-							4'b0011	:	segment = ~7'b1001111;
-							4'b0100	:	segment = ~7'b1100110;
-							4'b0101	:	segment = ~7'b1101101;
-							4'b0110	:	segment = ~7'b1111101;
-							4'b0111	:	segment = ~7'b0000111;
-							4'b1000	:	segment = ~7'b1111111;
-							4'b1001	:	segment = ~7'b1100111;
-							4'b1010	:	segment = ~7'b1110111;
-							4'b1011	:	segment = ~7'b0111100;
-							4'b1100	:	segment = ~7'b0111000;
-							4'b1101	:	segment = ~7'b1011110;
-							4'b1110	:	segment = ~7'b1111001;
-							4'b1111	:	segment = ~7'b1110001;
+							4'b0000	:	segment = ~7'b0111111; //0
+							4'b0001	:	segment = ~7'b0110000; //1
+							4'b0010	:	segment = ~7'b1011011; //2
+							4'b0011	:	segment = ~7'b1001111; //3
+							4'b0100	:	segment = ~7'b1100110; //4
+							4'b0101	:	segment = ~7'b1101101; //5
+							4'b0110	:	segment = ~7'b1111101; //6
+							4'b0111	:	segment = ~7'b0000111; //7
+							4'b1000	:	segment = ~7'b1111111; //8
+							4'b1001	:	segment = ~7'b1100111; //9
+							4'b1010	:	segment = ~7'b1110111; //A
+							4'b1011	:	segment = ~7'b1111100; //B
+							4'b1100	:	segment = ~7'b0111000; //C
+							4'b1101	:	segment = ~7'b1011110; //D
+							4'b1110	:	segment = ~7'b1111001; //E
+							4'b1111	:	segment = ~7'b1110001; //F
 						
 							
 						endcase

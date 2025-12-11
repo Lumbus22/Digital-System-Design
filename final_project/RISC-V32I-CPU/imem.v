@@ -17,23 +17,27 @@ module imem(
 	memory[0] = 32'h00500093; // addi x1, x0, 5 
 	memory[1] = 32'h00a00113; // addi x2, x0, 10
 	memory[2] = 32'h002081b3; // add x3, x1, x2
-	memory[3] = 32'hDEA00213; // addi x4, x0, DEA
-	memory[4] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[5] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[6] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[7] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[8] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[9] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[10] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[11] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[12] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[13] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[14] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[15] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[16] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[17] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[18] = 32'hDEA00213; // addi x4, x0, DEA
-	//memory[19] = 32'hDEA00213; // addi x4, x0, DEA
+	memory[3] = 32'h7FF00213; // addi x4, x0, 7FF
+
+	
+	memory[4] = 32'hDEAFB337; // lui x6, DEAFB
+	memory[5] = 32'hFFFFF3B7; // lui x7, 0xFFFFF
+	memory[6] = 32'hEFF00293; // addi x5, x0, EFF
+	memory[7] = 32'h40728533; // sub x10, x5, x7
+	memory[8] = 32'h00A305B3; // add x11, x6, x10
+	
+	//memory[8] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[9] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[10] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[11] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[12] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[13] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[14] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[15] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[16] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[17] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[18] = 32'h7FF00213; // addi x4, x0, DEA
+	//memory[19] = 32'h7FF00213; // addi x4, x0, DEA
 	//memory[20] = 32'hDEA00213; // addi x4, x0, DEA
 	//memory[21] = 32'hDEA00213; // addi x4, x0, DEA
 	//memory[22] = 32'hDEA00213; // addi x4, x0, DEA
