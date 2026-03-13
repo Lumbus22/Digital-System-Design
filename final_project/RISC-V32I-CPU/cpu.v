@@ -182,8 +182,8 @@ module cpu(
 							assign LEDOut [7:0] = viewRegister [7:0];	
 					
 							//Assigning Segment Values
-							assign sevenSegementDisplayValues [6:0] 		= segment(viewRegister[11:8]);
-							assign sevenSegementDisplayValues [13:7] 		= segment(viewRegister[15:12]);
+							assign sevenSegementDisplayValues [6:0] 	= segment(viewRegister[11:8]);
+							assign sevenSegementDisplayValues [13:7] 	= segment(viewRegister[15:12]);
 							assign sevenSegementDisplayValues [20:14] 	= segment(viewRegister[19:16]);
 							assign sevenSegementDisplayValues [27:21] 	= segment(viewRegister[23:20]);
 							assign sevenSegementDisplayValues [34:28] 	= segment(viewRegister[27:24]);
